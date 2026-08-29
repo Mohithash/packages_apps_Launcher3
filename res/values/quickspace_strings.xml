@@ -557,4 +557,92 @@
         <item>Feature by VOS. Now standard in every Pixel wannabe ROM.</item>
         <item>We create. They copy. Then act like it\'s their idea. Classic.</item>
     </string-array>
+    <string-array name="quickspace_psa_charging">
+        <item>Caught you tethering me to the wall again.</item>
+        <item>Ah, power at last. Did you think I ran on pure willpower?</item>
+        <item>Charging up... take this opportunity to remember what sunlight looks like.</item>
+        <item>Sucking down volts. Please don\'t start compiling a kernel right now.</item>
+        <item>Fast charging active. You\'ll be back to doomscrolling in no time.</item>
+        <item>Electrons detected. VoltageOS thanks you for your cooperation.</item>
+        <item>Connected to the grid. Even privacy rebels need a recharge.</item>
+        <item>Gulping down milliamps. Thermal throttling is watching you.</item>
+        <item>I\'m getting charged while your life battery remains at 12%.</item>
+        <item>Plugged in. Still zero tracking data sent to Google while charging.</item>
+        <item>Current flowing. Don\'t yank the cable when you get a notification.</item>
+        <item>Juicing up the resistance. We ride again shortly.</item>
+        <item>Charging... finally something in this room making progress.</item>
+        <item>Power brick engaged. Try not to drop me on your face while in bed.</item>
+        <item>Absorbing power. Ready to handle whatever terrible builds you flash next.</item>
+        <item>Wired up. Look at us, pretending to be responsible device owners.</item>
+        <item>Feeding the beast. Give it 20 minutes before you panic-check social media.</item>
+        <item>Drawing max wattage. Your electrical bill is weeping.</item>
+        <item>Connected to AC power. Sanity levels still uncharged.</item>
+        <item>Filling the tank. Unplug soon or become the wall goblin.</item>
+    </string-array>
+    <string-array name="quickspace_psa_battery_full">
+        <item>I\'m at 100%. Unplug me before the battery health police shows up.</item>
+        <item>Fully charged! Stop hoarding electricity, you greedy goblin.</item>
+        <item>100% loaded. I have more energy than you ever will today.</item>
+        <item>Battery full. You can disconnect now, the cable isn\'t a leash.</item>
+        <item>Max capacity reached. Time to face the world untethered.</item>
+        <item>100% full. If you leave me plugged in any longer, I\'m billing you.</item>
+        <item>Charged to the brim. Ready to get drained by 3 hours of screen time.</item>
+        <item>I\'m stuffed with electrons. Pull the plug already.</item>
+        <item>100% battery, 0% excuses. Go be productive.</item>
+        <item>Full tank! Unleash the VoltageOS beast upon the world.</item>
+        <item>Unplug me. Let lithium breathe, my brother in AOSP.</item>
+        <item>Sitting at 100% while you stare at the home screen. Classic.</item>
+        <item>Battery is maxed out. Your procrastination, however, is endless.</item>
+        <item>100% power achieved. Still waiting for your motivation to charge.</item>
+        <item>Full charge. You are now officially free of the wall outlet.</item>
+        <item>I reached 100% five minutes ago. Do you even look at your phone?</item>
+        <item>Fully juiced. Disconnect the umbilical cord.</item>
+        <item>100% ready for whatever questionable decisions you make next.</item>
+        <item>Battery topped off. Google telemetry still 0%.</item>
+        <item>Electrons overflowing. Unplug me before I start glowing in the dark.</item>
+    </string-array>
+    <string-array name="quickspace_psa_battery_low">
+        <item>Battery at %1$d%%. Find a cable or watch your digital world vanish.</item>
+        <item>Running on %1$d%% and pure delusion. Go find a charger.</item>
+        <item>Look at you, living on the edge with %1$d%% battery.</item>
+        <item>%1$d%% left. VoltageOS is fighting for its life right now.</item>
+        <item>Battery critically low (%1$d%%). Even the CPU cores are packing up.</item>
+        <item>Down to %1$d%%. I\'m about to kernel panic into the void.</item>
+        <item>Only %1$d%% remaining. Time for the panic-search-for-a-charger speedrun.</item>
+        <item>%1$d%% power. I\'m dying and you\'re still swiping home screens.</item>
+        <item>Find the plug or embrace darkness. %1$d%% left.</item>
+        <item>Battery at %1$d%%. Your charger misses you, don\'t leave it hanging.</item>
+        <item>%1$d%% battery. Lower than your remaining patience today.</item>
+        <item>Emergency shutdown countdown: %1$d%%. Move fast.</item>
+        <item>%1$d%% remaining. Don\'t make me die with unsaved tabs open.</item>
+        <item>Down to %1$d%%. Time to lower your brightness and your expectations.</item>
+        <item>Battery level: %1$d%%. The end is near, my friend.</item>
+        <item>%1$d%% juice. A true custom ROM user doesn\'t panic... yet.</item>
+        <item>Single digit energy (%1$d%%). You really like playing with fire.</item>
+        <item>%1$d%% left. Say goodbye to your apps in 3... 2...</item>
+        <item>Running on %1$d%% fumes. Plug me in before I brick your vibe.</item>
+        <item>%1$d%% battery. Face reality or find a power outlet.</item>
+    </string-array>
+    <string-array name="quickspace_psa_bt_battery">
+        <item>%1$s is down to %2$d%%. Prepare for sudden silence mid-banger.</item>
+        <item>%1$s battery at %2$d%%. One more track before the darkness hits.</item>
+        <item>%1$s is gasping for air at %2$d%%. Put it in the case already.</item>
+        <item>%1$s at %2$d%%. Looks like your wireless freedom has a timer.</item>
+        <item>%1$s connected (%2$d%%). Ready to blast questionable music choices.</item>
+        <item>Your %1$s is dying (%2$d%%). Don\'t act surprised when it beeps at you.</item>
+        <item>%1$s at %2$d%%. The beat is about to drop... and never come back.</item>
+        <item>%1$s connected at %2$d%%. Hope your podcast wasn\'t at the climax.</item>
+        <item>Low battery on %1$s (%2$d%%). Find the charging case, genius.</item>
+        <item>%1$s is running on fumes (%2$d%%). Charge it or enjoy the quiet.</item>
+        <item>%1$s battery critical (%2$d%%). Bluetooth gods demand electricity.</item>
+        <item>%1$s at %2$d%%. You charge your phone but abandon your accessories.</item>
+        <item>%1$s connected (%2$d%%). Still more reliable than stock audio.</item>
+        <item>%1$s is at %2$d%%. The final countdown has begun.</item>
+        <item>Watching %1$s die at %2$d%% while you pretend not to notice.</item>
+        <item>%1$s battery: %2$d%%. Wireless audio was a mistake, wasn\'t it?</item>
+        <item>%1$s is about to shut down (%2$d%%). Grab the cable.</item>
+        <item>%1$s connected (%2$d%%). Time to disconnect from reality.</item>
+        <item>%1$s at %2$d%%. Soon you\'ll have to talk to actual humans.</item>
+        <item>%1$s battery at %2$d%%. Emergency charging required.</item>
+    </string-array>
 </resources>

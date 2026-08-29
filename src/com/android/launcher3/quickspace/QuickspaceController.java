@@ -684,9 +684,37 @@ public class QuickspaceController
       return;
     }
 
-    if (mDestroyed) return;
-
     mHandler.removeCallbacks(mMediaUpdateRunnable);
     mHandler.postDelayed(mMediaUpdateRunnable, 50);
+  }
+
+  public void triggerChargingEvent() {
+    if (mDestroyed || mEventsController == null) return;
+    mEventsController.triggerChargingEvent();
+    notifyListeners();
+  }
+
+  public void triggerBatteryFullEvent() {
+    if (mDestroyed || mEventsController == null) return;
+    mEventsController.triggerBatteryFullEvent();
+    notifyListeners();
+  }
+
+  public void triggerBatteryLowEvent(int level) {
+    if (mDestroyed || mEventsController == null) return;
+    mEventsController.triggerBatteryLowEvent(level);
+    notifyListeners();
+  }
+
+  public void triggerBtBatteryEvent(String deviceName, int level) {
+    if (mDestroyed || mEventsController == null) return;
+    mEventsController.triggerBtBatteryEvent(deviceName, level);
+    notifyListeners();
+  }
+
+  public void clearBatteryContextualEvent() {
+    if (mDestroyed || mEventsController == null) return;
+    mEventsController.clearActiveContextualEvent(QuickEventsController.CONTEXT_EVENT_NONE);
+    notifyListeners();
   }
 }

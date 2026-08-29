@@ -70,6 +70,14 @@ public class QuickBatteryController {
   private long mLastInteractionTime = 0;
   private final Set<String> mAlertedDevices = new HashSet<>();
 
+  private boolean mInitialStickyReceived = false;
+  private boolean mLastPhoneCharging = false;
+  private int mLastPhoneLevel = -1;
+  private boolean mPhoneFullTriggered = false;
+  private boolean mPhoneLowTriggered = false;
+  private final Set<String> mKnownBtDevices = new HashSet<>();
+  private final Set<String> mLowAlertedBtDevices = new HashSet<>();
+
   private final BroadcastReceiver mReceiver =
       new BroadcastReceiver() {
         @Override
@@ -91,6 +99,43 @@ public class QuickBatteryController {
         status == BatteryManager.BATTERY_STATUS_CHARGING
             || status == BatteryManager.BATTERY_STATUS_FULL;
 
+    if (!mInitialStickyReceived) {
+      mLastPhoneCharging = isCharging;
+      mLastPhoneLevel = level;
+      if (level == 100 && isCharging) {
+        mPhoneFullTriggered = true;
+      }
+      if (level <= 15) {
+        mPhoneLowTriggered = true;
+      }
+      mInitialStickyReceived = true;
+    } else {
+      if (!mLastPhoneCharging && isCharging) {
+        mController.triggerChargingEvent();
+      } else if (mLastPhoneCharging && !isCharging) {
+        mPhoneFullTriggered = false;
+      }
+
+      if (isCharging && level == 100 && !mPhoneFullTriggered) {
+        mController.triggerBatteryFullEvent();
+        mPhoneFullTriggered = true;
+      } else if (level < 100) {
+        mPhoneFullTriggered = false;
+      }
+
+      if (!isCharging && level <= 15) {
+        if (!mPhoneLowTriggered || mLastPhoneLevel > 15) {
+          mController.triggerBatteryLowEvent(level);
+          mPhoneLowTriggered = true;
+        }
+      } else if (level > 15) {
+        mPhoneLowTriggered = false;
+      }
+
+      mLastPhoneCharging = isCharging;
+      mLastPhoneLevel = level;
+    }
+
     if (mPhoneDevice != null
         && mPhoneDevice.level == level
         && mPhoneDevice.isCharging == isCharging) {
@@ -104,6 +149,7 @@ public class QuickBatteryController {
 
   private void updateBluetoothDevices(Intent intent) {
     mBtDevices.clear();
+    Set<String> currentAddresses = new HashSet<>();
 
     ArrayList<String> names = intent.getStringArrayListExtra("device_list_names");
     ArrayList<Integer> levels = intent.getIntegerArrayListExtra("device_list_levels");
@@ -115,16 +161,36 @@ public class QuickBatteryController {
 
       for (int i = 0; i < count; i++) {
         boolean isAudio = false;
-        if (audioFlags != null) {
+        if (audioFlags != null && i < audioFlags.size()) {
           isAudio = Boolean.parseBoolean(audioFlags.get(i));
         }
 
         String addr = (addresses != null && i < addresses.size()) ? addresses.get(i) : names.get(i);
-
         int level = Math.max(0, Math.min(100, levels.get(i)));
-        mBtDevices.add(new BatteryDevice(names.get(i), level, isAudio, addr, false));
+        String devName = names.get(i);
+
+        mBtDevices.add(new BatteryDevice(devName, level, isAudio, addr, false));
+        currentAddresses.add(addr);
+
+        if (!mKnownBtDevices.contains(addr)) {
+          mKnownBtDevices.add(addr);
+          mController.triggerBtBatteryEvent(devName, level);
+          if (level <= 20) {
+            mLowAlertedBtDevices.add(addr);
+          }
+        } else {
+          if (level <= 20 && !mLowAlertedBtDevices.contains(addr)) {
+            mController.triggerBtBatteryEvent(devName, level);
+            mLowAlertedBtDevices.add(addr);
+          } else if (level > 20) {
+            mLowAlertedBtDevices.remove(addr);
+          }
+        }
       }
     }
+
+    mKnownBtDevices.retainAll(currentAddresses);
+    mLowAlertedBtDevices.retainAll(currentAddresses);
   }
 
   private void refreshDeviceList() {

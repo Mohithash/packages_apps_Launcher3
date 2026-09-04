@@ -15,7 +15,7 @@
 -->
 <resources>
     <!-- Application name -->
-    <string name="voltage_app_name" translatable="false">Voltage Home</string>
+    <string name="voltage_app_name" translatable="false">BestROM Home</string>
 
     <!-- Folder titles -->
     <string name="google_folder_title" translatable="false">Google</string>
@@ -221,8 +221,8 @@
     <string-array name="quickspace_style_entries">
         <item>Default</item>
         <item>Extended</item>
-        <item>Voltage</item>
-        <item>Voltage paged style</item>
+        <item>BestROM</item>
+        <item>BestROM paged style</item>
     </string-array>
     <string-array name="quickspace_style_values" translatable="false">
         <item>0</item>
@@ -233,9 +233,9 @@
 
     <!-- Quickspace clock accent -->
     <string name="quickspace_voltage_accent_title">Accent colored clock</string>
-    <string name="quickspace_voltage_accent_summary">Color the first number of the clock in Voltage style</string>
+    <string name="quickspace_voltage_accent_summary">Color the first number of the clock in BestROM style</string>
     <string name="quickspace_voltage_minimal_title">Minimal mode</string>
-    <string name="quickspace_voltage_minimal_summary">Collapse Voltage secondary content into tappable quick icons</string>
+    <string name="quickspace_voltage_minimal_summary">Collapse BestROM secondary content into tappable quick icons</string>
 
     <!-- QuickSpace: QuickEvent: Greetings -->
     <string name="quickspace_grt_morning">Good morning.</string>
@@ -282,7 +282,7 @@
     <string name="quick_event_weather_text_summary">Display current weather condition summary</string>
 
     <string name="quickspace_battery_title">Device Battery</string>
-    <string name="quickspace_battery_summary">Show phone and connected bluetooth device battery in Voltage style</string>
+    <string name="quickspace_battery_summary">Show phone and connected bluetooth device battery in BestROM style</string>
 
     <!-- Dark App Drawer Text -->
     <string name="all_apps_dark_text_title">Dark app labels</string>

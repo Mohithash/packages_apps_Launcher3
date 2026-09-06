@@ -101,7 +101,7 @@ private constructor(
         private const val KEY_ICON_THEME = "icon_theme_id"
         private val THEME_ID = backedUpItem(KEY_ICON_THEME, "")
 
-        @VisibleForTesting val LEGACY_MONO_THEME_ICON = backedUpItem("themed_icons", true)
+        @VisibleForTesting val LEGACY_MONO_THEME_ICON = backedUpItem("themed_icons", false)
 
         @VisibleForTesting
         fun parsePrefValue(value: String): ThemeValue? {

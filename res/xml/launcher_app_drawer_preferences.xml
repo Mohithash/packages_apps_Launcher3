@@ -21,7 +21,7 @@
         android:max="100"
         android:min="0"
         settings:units="%"
-        android:defaultValue="60" />
+        android:defaultValue="100" />
 
     <SwitchPreferenceCompat
         android:key="pref_allapps_themed_icons"

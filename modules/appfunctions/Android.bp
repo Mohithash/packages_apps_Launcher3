@@ -50,5 +50,16 @@ android_library {
     plugins: ["androidx.appfunctions_appfunctions-compiler-plugin"],
     kotlincflags: ["-Xjvm-default=all"],
     enable_ksp: true, // required for appfunctions
+
+    // The androidx.appfunctions aggregating processor is opt-in and defaults
+    // to off, so the KSP run produced invokers but no assets/app_functions.xml
+    // and no AggregatedAppFunctionInvoker, and the launcher's four workspace
+    // functions were never indexed. Four backslashes: Soong joins these flags
+    // with ':', the KSP client treats '\\' as an escape, and the command line
+    // is expanded by bash, which eats one of them. Same form as
+    // packages/apps/TvSystemUI/Android.bp.
+    annotation_processor_flags: [
+        "appfunctions\\\\:aggregateAppFunctions=true",
+    ],
     optional_uses_libs: ["com.android.extensions.appfunctions"],
 }

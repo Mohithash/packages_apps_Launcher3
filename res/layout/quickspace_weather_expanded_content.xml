@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingStart="6dp"
-        android:fontFamily="google-sans-flex"
+        android:fontFamily="space-grotesk"
         android:textColor="?workspaceTextColor"
         android:textSize="@dimen/quickspace_subtitle_size"
         android:singleLine="true" />

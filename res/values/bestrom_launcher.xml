@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The Android Open Source Project
+<!--
+     Copyright (C) 2026 The BestROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,8 +14,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
-    <solid android:color="?attr/allappsHeaderProtectionColor" />
-    <!-- BestROM: match Settings search pill (52dp tall → 26dp radius). -->
-    <corners android:radius="@dimen/bestrom_launcher_search_corner_radius" />
-</shape>
+<!-- Local copy of BestromUiTokens card radius for all-apps chrome. -->
+<resources>
+    <dimen name="bestrom_launcher_card_corner_radius">22dp</dimen>
+    <dimen name="bestrom_launcher_search_corner_radius">26dp</dimen>
+</resources>

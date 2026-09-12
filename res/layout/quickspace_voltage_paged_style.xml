@@ -12,7 +12,7 @@
         android:id="@+id/quickspace_day_of_week"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="google-sans-medium"
+        android:fontFamily="space-grotesk-semi-bold"
         android:paddingStart="16dp"
         android:textColor="?workspaceTextColor"
         android:textSize="28sp"
@@ -25,7 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="none"
-        android:fontFamily="google-sans-flex"
+        android:fontFamily="doto"
         android:format12Hour="h:mm"
         android:format24Hour="H:mm"
         android:includeFontPadding="false"
@@ -42,7 +42,7 @@
         style="@style/QuickSpaceSubText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="google-sans-flex"
+        android:fontFamily="space-grotesk-semi-bold"
         android:paddingStart="16dp"
         android:paddingEnd="8dp"
         android:textColor="?workspaceTextColor"
@@ -131,7 +131,7 @@
                 android:id="@+id/now_playing_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="google-sans-flex"
+                android:fontFamily="space-grotesk"
                 android:singleLine="true"
                 android:textColor="?workspaceTextColor"
                 android:textSize="@dimen/quickspace_subtitle_size" />
@@ -142,7 +142,7 @@
             style="@style/QuickSpaceSubText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="google-sans-flex"
+            android:fontFamily="space-grotesk"
             android:textColor="?workspaceTextColor"
             android:textSize="@dimen/quickspace_subtitle_size"
             android:visibility="gone" />
@@ -223,7 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ellipsize="end"
-                android:fontFamily="google-sans-medium"
+                android:fontFamily="space-grotesk-semi-bold"
                 android:singleLine="true"
                 android:textColor="?workspaceTextColor"
                 android:textSize="16sp" />
@@ -239,7 +239,7 @@
                 android:singleLine="true"
                 android:textColor="?android:attr/textColorPrimaryInverse"
                 android:textSize="12sp"
-                android:fontFamily="google-sans-medium" />
+                android:fontFamily="space-grotesk-semi-bold" />
 
             <LinearLayout
                 android:id="@+id/battery_dots_container"

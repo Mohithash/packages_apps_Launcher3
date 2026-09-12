@@ -892,8 +892,20 @@ public class QuickSpaceView extends FrameLayout implements OnDataListener {
         }
 
         String psaMessage = mController.getEventController().getPSAMessage();
+        String lifestyle = mController.getLifestyleLine();
+        if (!TextUtils.isEmpty(lifestyle)) {
+          psaMessage =
+              TextUtils.isEmpty(psaMessage) ? lifestyle : lifestyle + " · " + psaMessage;
+        }
         updateTextViewIfNeeded(mPSAMessage, psaMessage, false);
-        mPSAMessage.setOnClickListener(mController.getEventController().getPSAAction());
+        mPSAMessage.setOnClickListener(
+            v -> {
+              if (!TextUtils.isEmpty(mController.getLifestyleLine())) {
+                mController.addLifestyleWaterCup();
+              } else if (mController.getEventController().getPSAAction() != null) {
+                mController.getEventController().getPSAAction().onClick(v);
+              }
+            });
         post(() -> maybeSetMarquee(mPSAMessage));
       } else {
         if (mContextualInfoRow.getVisibility() != View.GONE) {

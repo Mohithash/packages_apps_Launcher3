@@ -313,6 +313,7 @@ constructor(@ApplicationContext private val encryptedContext: Context) {
         @JvmField val SHOW_QUICKSPACE_WEATHER_CITY = backedUpItem("pref_quickspace_weather_city", false)
         @JvmField val SHOW_QUICKSPACE_WEATHER_TEXT = backedUpItem("pref_quickspace_weather_text", true)
         @JvmField val SHOW_QUICKSPACE_BATTERY = backedUpItem("pref_quickspace_battery", false)
+        @JvmField val SHOW_QUICKSPACE_LIFESTYLE = backedUpItem("pref_quickspace_lifestyle", true)
         @JvmField val SHOW_STATUS_BAR = backedUpItem("pref_show_statusbar", true)
         @JvmField val SHOW_TOP_SHADOW = backedUpItem("pref_show_top_shadow", true)
         @JvmField val BLUR_BACKGROUND_AT_APP_LAUNCH = backedUpItem("pref_blur_background_at_app_launch", true)

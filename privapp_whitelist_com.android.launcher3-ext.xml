@@ -29,5 +29,6 @@
         <permission name="com.android.alarm.permission.SET_ALARM"/>
         <permission name="com.libremobileos.permission.START_FREEFORM"/>
         <permission name="android.permission.BLUETOOTH_CONNECT"/>
+        <permission name="com.bestrom.agent.permission.USE_BRAIN"/>
     </privapp-permissions>
 </permissions>

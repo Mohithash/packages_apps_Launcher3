@@ -524,6 +524,7 @@ android_library {
     static_libs: [
         "SystemUI-statsd",
         "QuickstepResLib",
+        "BestromBrainApi",
         // Compose dep
         "androidx.compose.runtime_runtime",
     ],

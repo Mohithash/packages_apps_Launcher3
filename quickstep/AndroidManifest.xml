@@ -47,6 +47,7 @@
                      android:featureFlag="com.android.server.ui_latency_stats.ui_latency_stats_service" />
     <uses-permission android:name="android.permission.SYSTEM_APPLICATION_OVERLAY" />
     <uses-permission android:name="android.permission.EXECUTE_APP_FUNCTIONS_SYSTEM"/>
+    <uses-permission android:name="com.bestrom.agent.permission.USE_BRAIN" />
 
     <uses-permission android:name="android.permission.PERSONAL_CONTEXT_PUBLISH_HINTS"/>
     <uses-permission android:name="android.permission.PERSONAL_CONTEXT_RECEIVE_INSIGHTS"/>

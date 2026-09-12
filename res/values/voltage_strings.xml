@@ -283,6 +283,8 @@
 
     <string name="quickspace_battery_title">Device Battery</string>
     <string name="quickspace_battery_summary">Show phone and connected bluetooth device battery in BestROM style</string>
+    <string name="quickspace_lifestyle_title">Focus and health</string>
+    <string name="quickspace_lifestyle_summary">Show focus score, water, and a short brain tip. Tap the line to log a cup of water. Not medical advice.</string>
 
     <!-- Dark App Drawer Text -->
     <string name="all_apps_dark_text_title">Dark app labels</string>

@@ -50,6 +50,7 @@ public class QuickspaceController
   private final Map<String, Integer> mConditionMap;
   private QuickEventsController mEventsController;
   private QuickBatteryController mBatteryController;
+  private LifestyleController mLifestyleController;
 
   private OmniJawsClient mWeatherClient;
   private OmniJawsClient.WeatherInfo mWeatherInfo;
@@ -139,6 +140,12 @@ public class QuickspaceController
     mConditionMap = initializeConditionMap();
     mEventsController = new QuickEventsController(context);
     mBatteryController = new QuickBatteryController(context, this);
+    mLifestyleController =
+        new LifestyleController(context, () -> {
+          if (!mDestroyed) {
+            notifyListeners();
+          }
+        });
 
     mPsaRunnable =
         new Runnable() {
@@ -356,6 +363,16 @@ public class QuickspaceController
     return mBatteryController;
   }
 
+  public String getLifestyleLine() {
+    return mLifestyleController != null ? mLifestyleController.getLine() : "";
+  }
+
+  public void addLifestyleWaterCup() {
+    if (mLifestyleController != null) {
+      mLifestyleController.addWaterCup();
+    }
+  }
+
   public boolean isWeatherAvailable() {
     try {
       return !mDestroyed
@@ -520,6 +537,10 @@ public class QuickspaceController
     mConditionImage = null;
     mEventsController = null;
     mBatteryController = null;
+    if (mLifestyleController != null) {
+      mLifestyleController.destroy();
+      mLifestyleController = null;
+    }
     mCachedWeatherTemp = null;
 
     mWeatherCacheTime = 0;
